@@ -1,4 +1,4 @@
-# PRAKTIKUM MODUL 01 KOMUNIKASI DATA DAN JARINGAN KOMPUTER
+# Praktikum Modul 02 Komunikasi Data dan Jaringan Komputer
 ## Kelompok IT02
 ### Anggota Kelompok :
 |             Nama              |     NRP    |
