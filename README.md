@@ -253,7 +253,8 @@ $TTL    604800
 www     IN      CNAME   pasopati.it02.com.
 ```
 
-Simpan konfigurasi dengan `ctrl + x`. Setelah itu perlu merestart bind9.
+Simpan konfigurasi dengan `ctrl + x`.
+Setelah itu perlu merestart bind9.
 
 ```
 service bind9 restart
@@ -390,7 +391,7 @@ Saya menjalankan command berikut di web console Sriwijaya
 nano /etc/bind/named.conf.local
 ```
 
-Karena IP yang saya gunakan adalah `192.234.3.x`, maka reversenya adalah `3.234.192`.
+Karena IP yang saya gunakan adalah `192.234.3.x`, maka perlu di-reverse menjadi `3.234.192`.
 
 ```
 zone “3.234.192.in-addr.arpa” {
@@ -406,6 +407,8 @@ cp /etc/bind/db.local /etc/bind/it02/3.234.192.in-addr.arpa
 ```
 nano /etc/bind/it02/3.234.192.in-addr.arpa
 ```
+
+Konfigurasinya adalah sebagai berikut
 
 ```
 ;
