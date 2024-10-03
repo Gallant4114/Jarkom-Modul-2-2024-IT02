@@ -201,7 +201,7 @@ $TTL    604800
 @       IN       NS        sudarsana.it02.com.
 @       IN       A         192.234.1.4
 @       IN       AAAA      ::1
-www     IN       CNAME     sudarsana.it02.com
+www     IN       CNAME     sudarsana.it02.com.
 
 ```
 
