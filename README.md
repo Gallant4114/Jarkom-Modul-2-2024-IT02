@@ -266,6 +266,23 @@ service bind9 restart
 nano /etc/bind/named.conf.local
 ```
 
+```
+zone “rujapala.it02.com”
+{
+type master;
+file “/etc/bind/it02/rujapala.it02.com”;
+};
+```
+
+```
+cp /etc/bind/db.local /etc/bind/it02/rujapala.it02.com
+```
+
+```
+nano /etc/bind/it02/rujapala.it02.com
+```
+
+Menambahkan konfigurasi di bawah ini
 
 ```
 ;
@@ -284,3 +301,151 @@ $TTL    604800
 @       IN      AAAA    ::1
 www     IN      CNAME   rujapala.it02.com.
 ```
+
+
+```
+service bind9 restart
+```
+
+## Soal no 5
+>Pastikan domain-domain tersebut dapat diakses oleh seluruh komputer (client) yang berada di Nusantara.
+
+Agar domain dapat diakses, maka perlu penambahan konfigurasi pada komputer/client. Client ditandai dengan simbol komputer, yaitu `HayamWuruk`, `Srikandi`, dan `AlbertEinstein`.
+
+Konfigurasi yang ditambahkan adalah sebagai berikut
+
+```
+up echo nameserver 192.234.2.2 >> /etc/resolv.conf
+up echo nameserver 192.234.1.3 >> /etc/resolv.conf
+```
+
+HayamWuruk
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.234.1.2
+	netmask 255.255.255.0
+	gateway 192.234.1.1
+
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+
+up echo nameserver 192.234.2.2 >> /etc/resolv.conf
+up echo nameserver 192.234.1.3 >> /etc/resolv.conf
+```
+
+Srikandi
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.234.1.5
+	netmask 255.255.255.0
+	gateway 192.234.1.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+
+up echo nameserver 192.234.2.2 >> /etc/resolv.conf
+up echo nameserver 192.234.1.3 >> /etc/resolv.conf
+```
+
+AlbertEinstein
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.234.3.5
+	netmask 255.255.255.0
+	gateway 192.234.3.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+
+up echo nameserver 192.234.2.2 >> /etc/resolv.conf
+up echo nameserver 192.234.1.3 >> /etc/resolv.conf
+```
+
+Untuk mengecek apakah domain dapat diakses, maka dilakukan ping pada client tersebut
+
+```
+ping sudarsana.it02.com -c 4
+ping pasopati.it02.com -c 4
+ping rujapala.it02.com -c 4
+```
+
+Pada soal nomor 4 ini saya mengalami kendala, yaitu belum bisa berhasil melakukan ping pada setiap node untuk memastikan bahwa domain dapat diakses.
+Tampilan yang didapatkan adalah sebagai berikut:
+
+![image](https://github.com/user-attachments/assets/b314843d-4814-4d97-9e8c-4566bb80de98)
+
+![image](https://github.com/user-attachments/assets/32deb5a0-b429-43fd-bc80-8802429afda3)
+
+![image](https://github.com/user-attachments/assets/c1d7447f-33a0-48c0-9002-d761a33bdf6e)
+
+## Soal no 6
+> Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).
+
+Alamat IP Kotalingga sesuai dengan topologi adalah `192.234.3.2`
+
+Saya menjalankan command berikut di web console Sriwijaya
+
+```
+nano /etc/bind/named.conf.local
+```
+
+Karena IP yang saya gunakan adalah `192.234.3.x`, maka reversenya adalah `3.234.192`.
+
+```
+zone “3.234.192.in-addr.arpa” {
+type master;
+file “/etc/bind/it02/3.234.192.in-addr.arpa”;
+};
+```
+
+```
+cp /etc/bind/db.local /etc/bind/it02/3.234.192.in-addr.arpa
+```
+
+```
+nano /etc/bind/it02/3.234.192.in-addr.arpa
+```
+
+```
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	pasopati.it02.com. root.pasopati.it02.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  84600		; Retry
+                        2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+3.234.192.in-addr.arpa.		IN	NS	pasopati.it02.com.
+3				IN	PTR	pasopati.it02.com.
+```
+
+Setelah di-save, perlu dilakukan restart bind9
+
+```
+service bind9 restart
+```
+
+Melakukan pengujian pada client dengan cara
+
+```
+host -t PTR 192.234.3.2
+```
+
+Saat menguji pada client, saya masih mengalami kendala, yaitu terjadi time out.
+
+![Screenshot 2024-10-04 030723](https://github.com/user-attachments/assets/d6ee8642-39ed-4a4c-ada3-9ca9bb7599d3)
+
+![Screenshot 2024-10-04 030730](https://github.com/user-attachments/assets/6180ef93-6769-4fdc-b85c-eb55b3ab3cb4)
+
+![Screenshot 2024-10-04 030739](https://github.com/user-attachments/assets/6a211419-67dc-483e-9aee-c74e4d48d4b9)
+
+
+***
+end
+***
+***
+***
