@@ -37,3 +37,36 @@ $TTL    604800
 www     IN       CNAME     sudarsana.it19.com
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     pasopati.it02.com. root.pasopati.it02.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      pasopati.it02.com.
+@       IN      A       192.234.3.2
+@       IN      AAAA    ::1
+www     IN      CNAME   pasopati.it02.com.
+```
