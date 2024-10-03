@@ -3,7 +3,7 @@
 ### Anggota Kelompok :
 |             Nama              |     NRP    |
 |-------------------------------|------------|
-|Gallant Damas H|5027231037|
+
 
 ***
 
@@ -11,8 +11,11 @@
 ![image](https://github.com/user-attachments/assets/86844250-9f7f-40b4-b342-133e7fc5b3f1)
 
 
-# No 1
+## Soal No 1
 
-Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
+> Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), Sriwijaya membuat dua kotanya menjadi web server yaitu Tanjungkulai, dan Bedahulu, serta Sriwijaya sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, Majapahit memberikan bantuan dan menjadikan kerajaannya (Majapahit) menjadi DNS Slave. 
 
 Langkah pertama adalah membuat topologi sesuai dengan pembagian menggunakan image ubuntu.
+
+![image](https://github.com/user-attachments/assets/2d7e4c24-0910-4da4-a885-c8b7c30018e4)
+
