@@ -462,10 +462,17 @@ Saat menguji pada client, saya masih mengalami kendala, yaitu terjadi time out.
 
 ![Screenshot 2024-10-04 030739](https://github.com/user-attachments/assets/6a211419-67dc-483e-9aee-c74e4d48d4b9)
 
-Setelah beberapa kali mencoba, node `Srikandi` berhasil mengarah ke `pasopati.it02.com`
+Setelah beberapa kali mencoba, node `Srikandi` berhasil mengarah ke `pasopati.it02.com`.
 
-![Screenshot 2024-10-05 135758](https://github.com/user-attachments/assets/5431f024-6285-4789-9225-b64fc3b25fe9)
+![image](https://github.com/user-attachments/assets/5431f024-6285-4789-9225-b64fc3b25fe9)
 
+Lalu untuk node `HayamWuruk` juga sudah berhasil mengarah ke `pasopati.it02.com`.
+
+![image](https://github.com/user-attachments/assets/c93dd73e-6fa3-4ca2-be6c-ed485f052a4f)
+
+Node `AlbertEinstein` merespon cukup lama dan belum berhasil mengarah ke `pasopati.it02.com`.
+
+![image](https://github.com/user-attachments/assets/470a9775-1a50-4c20-b369-26715f5cbf06)
 
 ***
 end
