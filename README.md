@@ -439,7 +439,7 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 3.234.192.in-addr.arpa.		IN	NS	pasopati.it02.com.
-3				IN	PTR	pasopati.it02.com.
+2				IN	PTR	pasopati.it02.com.
 ```
 
 Setelah di-save, perlu dilakukan restart bind9
@@ -461,6 +461,10 @@ Saat menguji pada client, saya masih mengalami kendala, yaitu terjadi time out.
 ![Screenshot 2024-10-04 030730](https://github.com/user-attachments/assets/6180ef93-6769-4fdc-b85c-eb55b3ab3cb4)
 
 ![Screenshot 2024-10-04 030739](https://github.com/user-attachments/assets/6a211419-67dc-483e-9aee-c74e4d48d4b9)
+
+Setelah beberapa kali mencoba, node `Srikandi` berhasil mengarah ke `pasopati.it02.com`
+
+![Screenshot 2024-10-05 135758](https://github.com/user-attachments/assets/5431f024-6285-4789-9225-b64fc3b25fe9)
 
 
 ***
