@@ -385,6 +385,11 @@ Tampilan yang didapatkan adalah sebagai berikut:
 
 ![image](https://github.com/user-attachments/assets/c1d7447f-33a0-48c0-9002-d761a33bdf6e)
 
+Namun, setelah beberapa kali saya mencoba, client berhasil melakukan ping dengan hasil sebagai berikut
+
+![image](https://github.com/user-attachments/assets/2b5c0789-90ae-41f8-b155-07f9b530f153)
+
+
 ## Soal no 6
 > Beberapa daerah memiliki keterbatasan yang menyebabkan hanya dapat mengakses domain secara langsung melalui alamat IP domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain pasopati.xxxx.com melalui alamat IP Kotalingga (Notes: menggunakan pointer record).
 
