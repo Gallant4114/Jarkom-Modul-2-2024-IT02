@@ -475,8 +475,58 @@ Node `AlbertEinstein` merespon cukup lama dan belum berhasil mengarah ke `pasopa
 
 ![image](https://github.com/user-attachments/assets/470a9775-1a50-4c20-b369-26715f5cbf06)
 
-***
-end
-***
-***
-***
+## Soal no 7
+
+> Akhir-akhir ini seringkali terjadi serangan brainrot ke DNS Server Utama, sebagai tindakan antisipasi kamu diperintahkan untuk membuat DNS Slave di Majapahit untuk semua domain yang sudah dibuat sebelumnya yang mengarah ke Sriwijaya.
+
+Menjalankan command berikut di Majapahit
+
+```
+apt install bind9 dnsutils -y
+```
+
+Masuk ke `/etc/bind`
+
+```
+cd /etc/bind
+```
+
+```
+nano named.conf.local
+```
+
+Memasukkan konfigurasi seperti di bawah ini
+
+```
+zone "sudarsana.it02.com"
+   {
+    type master;
+    file "/etc/bind/it02/sudarsana.it02.com";
+   };
+
+zone "pasopati.it02.com"
+   {
+    type master;
+    file "/etc/bind/it02/pasopati.it02.com";
+   };
+
+zone "rujapala.it02.com"
+   {
+    type master;
+    file "/etc/bind/it02/rujapala.it02.com";
+   };
+
+zone "3.234.192.in-addr.arpa"
+   {
+    type master;
+    file "/etc/bind/it02/3.234.192.in-addr.arpa";
+   };
+```
+
+Selanjutnya adalah merestart service bind9
+
+```
+service bind9 restart
+```
+
+![image](https://github.com/user-attachments/assets/b254489a-13a2-4cbd-a4ab-87d68d4cbc9b)
