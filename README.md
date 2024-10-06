@@ -392,6 +392,7 @@ Node HayamWuruk
 ![image](https://github.com/user-attachments/assets/2b5c0789-90ae-41f8-b155-07f9b530f153)
 
 Node Srikandi
+
 ![image](https://github.com/user-attachments/assets/d92b377d-6023-444a-813b-07f8c21c7b82)
 
 Client `AlbertEinstein` merespon cukup lama dan berakhir dengan gagal melakukan ping.
