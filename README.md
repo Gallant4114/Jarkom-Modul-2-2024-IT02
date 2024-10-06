@@ -530,3 +530,60 @@ service bind9 restart
 ```
 
 ![image](https://github.com/user-attachments/assets/b254489a-13a2-4cbd-a4ab-87d68d4cbc9b)
+
+Melakukan pengujian
+
+```
+ping sudarsana.it02.com
+```
+
+Saat dilakukan pengujian, terdapat kendala belum bisa melakukan ping
+
+![image](https://github.com/user-attachments/assets/c4205b4c-061d-4ef3-8cab-a53ee3d22dde)
+
+## Soal no 8
+
+> Kamu juga diperintahkan untuk membuat subdomain khusus melacak kekuatan tersembunyi di Ohio dengan subdomain cakra.sudarsana.xxxx.com yang mengarah ke Bedahulu.
+
+IP address dari node Bedahulu adalah `192.234.3.3`
+
+Menjalankan command berikut di node Majapahit
+
+```
+mkdir /etc/bind/it02
+```
+
+```
+cp /etc/bind/db.local /etc/bind/it02/sudarsana.it02.com
+```
+
+Memasukkan konfigurasi berikut
+
+```
+      ;
+      ; BIND data file for sudarsana.it02.com
+      ;
+      $TTL    604800
+      @       IN      SOA     sudarsana.it02.com. root.sudarsana.it02.com. (
+                                    2         ; Serial
+                               604800         ; Refresh
+                                86400         ; Retry
+                              2419200         ; Expire
+                               604800 )       ; Negative Cache TTL
+      ;
+      @       IN      NS      sudarsana.it02.com.
+      @       IN      A       192.234.3.3     
+      @       IN      AAAA    ::1
+      www     IN      CNAME   sudarsana.it02.com.
+      cakra   IN      A       10.79.1.4     
+```
+
+Melakukan restart service bind9
+
+```
+service bind9 restart
+```
+
+Melakukan pengujian
+
+![image](https://github.com/user-attachments/assets/9c07e13e-28f0-4364-9d72-ce2958c7f0a7)
